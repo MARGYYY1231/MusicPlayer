@@ -54,6 +54,7 @@ body{
     background-image: url('images/1.png');
     background-size: cover;
     box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.08);
+    animation: rotate 20s linear infinite;
 }
 
 /*Create hole in the center*/
@@ -230,4 +231,14 @@ body{
     transform: translate(-50%, -50%);
     border-radius: 0;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/*Add rotation to the disk*/
+@keyframes rotate{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
