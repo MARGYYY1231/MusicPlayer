@@ -12,7 +12,7 @@ const currentTime = document.querySelector('.current-time');
 const musicDuration = document.querySelector('.song-duration');
 const playBtn = document.querySelector('.play-btn');
 const forwardBtn = document.querySelector('.forward-btn');
-const bacwardBtn = document.querySelector('.backward-btn');
+const backwardBtn = document.querySelector('.backward-btn');
 
 /*Transition to play button when pressed
 Also stops disk from rotating when not being playesd*/
@@ -65,9 +65,39 @@ const formatTime = (time) => {
 setInterval(() => {
     seekBar.value = music.currentTime;
     currentTime.innerHTML = formatTime(music.currentTime);
+    if(Math.floor(music.currentTime) == Math.floor(seekBar.max)){
+        forwardBtn.click();
+    }
 }, 500)
 
 //if skipped to a certain position
 seekBar.addEventListener('change', () => {
     music.currentTime = seekBar.value;
+})
+
+const playMusic = () => {
+    music.play();
+    playBtn.classList.remove('pause');
+    disk.classList.add('play');
+}
+
+//forward and backward button
+forwardBtn.addEventListener('click', () => {
+    if(currentMusic >= songs.length - 1){
+        currentMusic = 0;
+    }else{
+        currentMusic++;
+    }
+    setMusic(currentMusic);
+    playMusic();
+})
+
+backwardBtn.addEventListener('click', () => {
+    if(currentMusic <= 0){
+        currentMusic = songs.length-1;
+    }else{
+        currentMusic--;
+    }
+    setMusic(currentMusic);
+    playMusic();
 })

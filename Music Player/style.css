@@ -55,27 +55,15 @@ body{
     background-size: cover;
     box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.08);
     animation: rotate 20s linear infinite;
-    animation-play-state: running;
-}
-
-/*When song is playing disk should rotate*/
-.disk.pause{
     animation-play-state: paused;
 }
 
-/*Create hole in the center*/
-/*.disk::before{
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: #800080;
-}*/
+/*When song is playing disk should rotate*/
+.disk.play{
+    animation-play-state: running;
+}
 
+/*The song slider*/
 .song-slider{
     width: 100%;
     position: relative;
