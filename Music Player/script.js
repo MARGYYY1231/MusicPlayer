@@ -26,6 +26,28 @@ playBtn.addEventListener('click', ()=> {
     disk.classList.toggle('pause');
 })
 
+//If certain buttons are pressed then perform a certain action
+window.addEventListener('keydown', (event) =>{
+    console.log(event.key);
+    if(event.key == ' '){
+        if(playBtn.className.includes('pause')){
+            music.play();
+        }else{
+            music.pause();
+        }
+        playBtn.classList.toggle('pause');
+        disk.classList.toggle('pause');
+    }
+
+    if(event.key == 'ArrowRight'){
+        forwardBtn.click();
+    }
+
+    if(event.key == 'ArrowLeft'){
+        backwardBtn.click();
+    }
+});
+
 //setup music
 
 const setMusic = (i) => {
