@@ -60,3 +60,9 @@ const formatTime = (time) => {
     }
     return `${min} : ${sec}`;
 }
+
+//seek bar
+setInterval(() => {
+    seekBar.value = music.currentTime;
+    currentTime.innerHTML = formatTime(music.currentTime);
+}, 500)
