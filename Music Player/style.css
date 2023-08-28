@@ -151,3 +151,21 @@ body{
     border-radius: 0;
     clip-path: polygon(0 0, 100% 50%, 100% 50%, 0 100%);
 }
+
+/*Creates pulse animation for the button*/
+.play-btn.pause{
+    animation: pulse 2s linear infinite;
+}
+
+/*Using box-shadow to create pulse effect*/
+@keyframes pulse{
+    0%{
+        box-shadow: 0;
+    }
+    50%{
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+    100%{
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
+    }
+}
