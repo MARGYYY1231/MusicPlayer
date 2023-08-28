@@ -129,9 +129,25 @@ body{
     border-radius: 2px;
     background: #800080;
     transition: .5s;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
+/*Used to change the second span*/
 .play-btn span:nth-child(2){
     left: 55%;
     transform-origin: center;
+}
+
+/*When paused the right side of the pause will disappear*/
+.play-btn.pause span:nth-child(2){
+    transform: translateY(-50%) scaleY(0);
+}
+
+/*So that when it is paused it will show the play button*/
+.play-btn.pause span:nth-child(1){
+    width: 35%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 50%, 100% 50%, 0 100%);
 }
