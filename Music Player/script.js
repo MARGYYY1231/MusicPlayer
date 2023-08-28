@@ -66,3 +66,8 @@ setInterval(() => {
     seekBar.value = music.currentTime;
     currentTime.innerHTML = formatTime(music.currentTime);
 }, 500)
+
+//if skipped to a certain position
+seekBar.addEventListener('change', () => {
+    music.currentTime = seekBar.value;
+})
